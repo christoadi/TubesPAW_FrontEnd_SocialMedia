@@ -17,7 +17,19 @@ const router = new VueRouter({
             name: 'Login',
             meta: { title: 'Login' },
             component: importComponent('Login'),
+
+            // children: [
+            //     //After Login (Beranda)
+            // {
+            //     path: '/beranda',
+            //     name: 'Beranda',
+            //     component: importComponent('Beranda'),
+            // },
+
+            // ]
         },
+
+        
     ],
 });
 
