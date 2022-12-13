@@ -24,7 +24,8 @@
                                 </v-text-field>
                             </v-col>
                             <v-col cols="6" sm="4">
-                                <v-btn color="blue" class="mt-2 d-flex font-weight-bold align-center white--text" darken @click="login">Log In</v-btn>
+                                <v-btn color="blue" class="mt-2 d-flex font-weight-bold align-center white--text" darken
+                                    @click="login">Log In</v-btn>
                             </v-col>
                         </v-row>
                     </v-form>
@@ -53,8 +54,8 @@
                                         outlined></v-select>
                                     <v-text-field v-model="dateborn" :rules="datebornRules" outlined required
                                         label="Date of birth" type="date"></v-text-field>
-                                    <v-text-field v-model="email" :rules="emailRules" outlined required label="Email"
-                                        type="email"></v-text-field>
+                                    <v-text-field v-model="email" :rules="emailRules" outlined required
+                                        label="Email address" type="email"></v-text-field>
                                     <v-text-field v-model="username" :rules="usernameRules" outlined required
                                         label="Username" type="text"></v-text-field>
                                     <v-text-field v-model="password" :rules="passwordRules" outlined required
@@ -62,7 +63,8 @@
 
                                     <v-layout justify-center>
                                         <v-btn color="#43b72a" class="font-weight-bold white--text" @click="register"
-                                            :class="{ '#43b72a white--text': valid, disable: !valid }">Create New Account</v-btn>
+                                            :class="{ '#43b72a white--text': valid, disable: !valid }">Create New
+                                            Account</v-btn>
                                     </v-layout>
                                 </v-form>
                             </div>
@@ -76,7 +78,7 @@
 </template>
 
 <style>
-.containerPosition{
+.containerPosition {
     position: absolute;
     top: 60px;
     left: 0;
@@ -114,7 +116,7 @@ export default {
                 (v) => !!v || 'Date of birth must be filled',
             ],
             emailRules: [
-                (v) => !!v || 'Email must be filled',
+                (v) => !!v || 'Email address must be filled',
             ],
             usernameRules: [
                 (v) => !!v || 'Username must be filled',
@@ -140,6 +142,9 @@ export default {
                     this.snackbar = true;
                     this.load = false;
                     this.clear();
+                    this.$router.push({
+                        name: 'Homepage',
+                    });
                 }).catch(error => {
                     this.error_message = error.response.data.message;
                     this.color = "red";
