@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import '@mdi/font/css/materialdesignicons.css'
+
 
 Vue.use(VueRouter);
 
@@ -11,29 +11,33 @@ function importComponent(path) {
 const router = new VueRouter({
     mode: "history",
     routes: [
-        //Login
+        // Login
         {
             path: '/login',
             name: 'Login',
             meta: { title: 'Login' },
             component: importComponent('Login'),
-
-            // children: [
-            //     //After Login (Beranda)
-            // {
-            //     path: '/beranda',
-            //     name: 'Beranda',
-            //     component: importComponent('Beranda'),
-            // },
-
-            // ]
         },
-
-        
+        {
+            path: '/homepage',
+            name: 'Homepage',
+            meta: { title: 'Homepage' },
+            component: importComponent('Homepage'),
+        },
+        {
+            path: '/profile',
+            name: 'Profile',
+            meta: { title: 'Profile' },
+            component: importComponent('Profile'),
+        },
+        {
+            path: '*',
+            redirect: '/login'
+        },
     ],
 });
 
-//Set Page Awal
+// Set Judul
 router.beforeEach((to, from ,next) => {
     document.title = to.meta.title;
     if(to.name !== "Login" && localStorage.getItem("token") == null) {
