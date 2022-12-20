@@ -30,7 +30,7 @@
               <v-icon color="#1977f2" class="ml-0 mt-3">mdi-alpha-s-circle</v-icon>
               <h2 class="font-weight-black black--text mt-4" color="#1977f2">SosmedKu</h2>
             </div>
-            <div class="d-felx justify-center">
+            <div class="d-flex justify-center">
               <v-text-field v-model="search" required solo rounded label="Search" type="text">
               </v-text-field>
             </div>
@@ -105,7 +105,7 @@ export default {
     },
 
     readComments() {
-      var url = this.$api + '/comment/'
+      var url = this.$api + '/comment'
 
       this.$http.get(url, {
         headers: {
@@ -142,8 +142,8 @@ export default {
 
     profile() {
       this.$router.push({
-        name: 'Profile',
-      });
+                        name: "Profile",
+                    });
     },
 
     followerName(idPar) {

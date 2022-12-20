@@ -3,7 +3,7 @@
     <v-card-title>
       <v-list-item-avatar color="black">
         <v-img class="" alt=""
-        src='https://avataaars.io/?avatarStyle=Transparent&topType=WinterHat4&accessoriesType=Kurt&hatColor=PastelBlue&hairColor=Blonde&facialHairType=BeardMajestic&facialHairColor=Black&clotheType=Hoodie&clotheColor=PastelRed&eyeType=Surprised&eyebrowType=Angry&mouthType=Tongue&skinColor=Brown'></v-img>
+          src='https://avataaars.io/?avatarStyle=Transparent&topType=WinterHat4&accessoriesType=Kurt&hatColor=PastelBlue&hairColor=Blonde&facialHairType=BeardMajestic&facialHairColor=Black&clotheType=Hoodie&clotheColor=PastelRed&eyeType=Surprised&eyebrowType=Angry&mouthType=Tongue&skinColor=Brown'></v-img>
       </v-list-item-avatar>
       <span class="text-h6 font-weight-light">{{ username }}</span>
       <v-spacer></v-spacer>
@@ -124,7 +124,7 @@ export default {
       this.deleteCommentPost();
       this.deletePostApi();
       alert("Post berhasil dihapus");
-      window.location.reload();
+      location.reload()
     },
 
     updatePost() {
@@ -147,7 +147,9 @@ export default {
         this.hiden = true;
         this.disable = true;
         alert("Post Edited");
-        window.location.reload();
+        this.$router.push({
+          name: "Profile",
+        });
       }).catch(error => {
         alert(error.response.data.message);
       });

@@ -170,7 +170,7 @@ export default {
                     this.load = false;
                     this.clear();
                     this.$router.push({
-                        name: 'Homepage',
+                        name: "Homepage",
                     });
                 }).catch(error => {
                     this.error_message = error.response.data.message;

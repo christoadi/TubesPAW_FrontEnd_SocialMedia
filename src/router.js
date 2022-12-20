@@ -13,31 +13,30 @@ const router = new VueRouter({
     routes: [
         // Login
         {
-            path: '/login',
-            name: 'Login',
-            meta: { title: 'Login' },
-            component: importComponent('Login'),
+            path: "/login",
+            name: "Login",
+            meta: { title: "Login" },
+            component: importComponent("Login"),
         },
         {
-            path: '/homepage',
-            name: 'Homepage',
-            meta: { title: 'Homepage' },
-            component: importComponent('Homepage'),
+            path: "/homepage",
+            name: "Homepage",
+            meta: { title: "Homepage" },
+            component: importComponent("Homepage"),
         },
         {
-            path: '/profile',
-            name: 'Profile',
-            meta: { title: 'Profile' },
-            component: importComponent('Profile'),
+            path: "/profile",
+            name: "Profile",
+            meta: { title: "Profile" },
+            component: importComponent("Profile"),
         },
         {
-            path: '*',
-            redirect: '/login'
+            path: "*",
+            redirect: "/login"
         },
     ],
 });
 
-// Set Judul
 router.beforeEach((to, from ,next) => {
     document.title = to.meta.title;
     if(to.name !== "Login" && localStorage.getItem("token") == null) {

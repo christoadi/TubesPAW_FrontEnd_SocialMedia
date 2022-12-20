@@ -50,7 +50,7 @@ export default {
       }).then(response => {
         alert(response.data.message);
         this.$router.push({
-          name: 'Homepage',
+          name: "Homepage",
         });
       })
     },

@@ -30,6 +30,8 @@ export default {
   data() {
     return {
       idPengguna: localStorage.getItem('id'),
+      disable: true,
+      hiden: true,
     };
   },
   methods: {
@@ -46,7 +48,7 @@ export default {
         }
       }).then(response => {
         console.log(response.data.message);
-        window.location.reload();
+        location.reload()
       }).catch(error => {
         alert(error.response.data.message);
       });
@@ -59,7 +61,7 @@ export default {
         }
       }).then(response => {
         console.log(response.data.message);
-        window.location.reload();
+        location.reload()
       }).catch(error => {
         alert(error.response.data.message);
       });

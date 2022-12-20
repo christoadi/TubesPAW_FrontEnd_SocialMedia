@@ -193,7 +193,7 @@ export default {
     },
     
     readComments() {
-      var url = this.$api + '/comment/'
+      var url = this.$api + '/comment'
 
       this.$http.get(url, {
         headers: {
